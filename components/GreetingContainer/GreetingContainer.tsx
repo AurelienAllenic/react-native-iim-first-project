@@ -1,14 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import { View, Button } from "react-native";
 import Greeting from "../Greetings/Greeting";
-import ListItems from "../ListItems/ListItems"; // adapte le chemin si besoin
+import { useProps } from "../PropsContext";
 
-interface GreetingContainerProps {
-  items: string[];
-}
-
-const GreetingContainer: React.FC<GreetingContainerProps> = ({ items }) => {
-  const [prenom, setPrenom] = useState(items[0] || "Prénom");
+const GreetingContainer: React.FC = () => {
+  const { prenom, setPrenom, items } = useProps();
 
   const handleChangePrenom = () => {
     let nouveauPrenom = prenom;

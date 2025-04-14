@@ -1,23 +1,15 @@
-// ProfileCard.tsx
 import React from "react";
 import { View, Text, Image, Button, StyleSheet } from "react-native";
+import { useProps } from "../PropsContext";
 
-interface ProfileCardProps {
-  userName: string;
-  userDescription: string;
-  userImage: any;
-}
+const ProfileCard: React.FC = () => {
+  const { profileData } = useProps();
 
-const ProfileCard: React.FC<ProfileCardProps> = ({
-  userName,
-  userDescription,
-  userImage,
-}) => {
   return (
     <View style={styles.card}>
-      <Image source={userImage} style={styles.profileImage} />
-      <Text style={styles.userName}>{userName}</Text>
-      <Text style={styles.userDescription}>{userDescription}</Text>
+      <Image source={profileData.userImage} style={styles.profileImage} />
+      <Text style={styles.userName}>{profileData.userName}</Text>
+      <Text style={styles.userDescription}>{profileData.userDescription}</Text>
       <Button title="Suivre" onPress={() => alert("Suivi!")} />
     </View>
   );

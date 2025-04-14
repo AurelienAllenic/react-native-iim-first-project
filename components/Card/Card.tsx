@@ -1,16 +1,21 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
+import { useProps } from "../PropsContext";
 
 interface CardProps {
-  title: string;
-  description: string;
+  cardIndex: number;
 }
 
-const Card: React.FC<CardProps> = ({ title, description }) => {
+const Card: React.FC<CardProps> = ({ cardIndex }) => {
+  const { cardData } = useProps();
+  const card = cardData[cardIndex];
+
+  if (!card) return null;
+
   return (
     <View style={styles.cardContainer}>
-      <Text style={styles.title}>{title}</Text>
-      <Text style={styles.description}>{description}</Text>
+      <Text style={styles.title}>{card.title}</Text>
+      <Text style={styles.description}>{card.description}</Text>
     </View>
   );
 };
