@@ -12,8 +12,6 @@ import TextInputAndClickCounter from "@/components/ButtonClick/ButtonClick";
 import Container from "@/components/Container/Container";
 
 export default function HomeScreen() {
-  const items = ["Alice", "Bob", "Charlie", "Diana"];
-
   return (
     <PropsProvider>
       <ParallaxScrollView
@@ -21,7 +19,7 @@ export default function HomeScreen() {
         headerImage={
           <Image
             source={require("@/assets/images/back-native.jpg")}
-            style={{ width: "100%", height: 200 }}
+            style={{ width: "100%", height: "100%" }}
           />
         }
       >
