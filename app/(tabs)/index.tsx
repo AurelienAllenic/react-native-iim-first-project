@@ -10,6 +10,8 @@ import GreetingContainer from "@/components/GreetingContainer/GreetingContainer"
 import Toggle from "@/components/Toggle/Toggle";
 import TextInputAndClickCounter from "@/components/ButtonClick/ButtonClick";
 import Container from "@/components/Container/Container";
+import { Background } from "../styles/styled";
+import { Link } from "expo-router";
 
 export default function HomeScreen() {
   return (
@@ -24,16 +26,22 @@ export default function HomeScreen() {
         }
       >
         <ThemedView>
-          <Container>
-            <Header />
-            <Toggle />
-            <TextInputAndClickCounter />
-            <GreetingContainer />
-            <Card cardIndex={0} />
-            <Card cardIndex={1} />
-            <Card cardIndex={2} />
-            <ProfileCard />
-          </Container>
+          <Background>
+            <Container>
+              <Header />
+              <Toggle />
+              <TextInputAndClickCounter />
+              <GreetingContainer />
+              <Card cardIndex={0} />
+              <Card cardIndex={1} />
+              <Card cardIndex={2} />
+              <ProfileCard />
+              <Link href="/settings">Settings</Link>
+              <Link href="/users">Users</Link>
+              <Link href="/home">home</Link>
+              <Link href="/home/next">home next</Link>
+            </Container>
+          </Background>
         </ThemedView>
       </ParallaxScrollView>
     </PropsProvider>

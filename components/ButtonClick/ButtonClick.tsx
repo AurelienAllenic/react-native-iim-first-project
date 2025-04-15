@@ -49,9 +49,9 @@ const TextInputAndClickCounter: React.FC = () => {
         onChangeText={handleEmailChange}
       />
       <View style={styles.containerIndications}>
-        <Text style={styles.text}>Caractères : {emailInput.length}</Text>
-        <Text style={styles.text}>Mots : {wordCount}</Text>
-        <Text style={styles.text}>Phrases : {sentenceCount}</Text>
+        <Text style={styles.textItalic}>Caractères : {emailInput.length}</Text>
+        <Text style={styles.textItalic}>Mots : {wordCount}</Text>
+        <Text style={styles.textItalic}>Phrases : {sentenceCount}</Text>
 
         {errorMessage !== "" && (
           <Text style={[styles.text, { color: "red" }]}>{errorMessage}</Text>
@@ -111,6 +111,11 @@ const styles = StyleSheet.create({
   },
   textClic: {
     marginTop: 20,
+  },
+  textItalic: {
+    fontStyle: "italic",
+    color: "#555",
+    fontSize: 14,
   },
 });
 
